@@ -1,6 +1,8 @@
+// Connect Scoket to Server
 var socket = io();
 
-// Listend
+// Listening to Back-End
+
 socket.on("connect", () => {
   console.log("Conneted to Server");
 });
@@ -13,7 +15,9 @@ socket.on("sendMessage", (message) => {
   console.log("Server: ", message);
 });
 
-// Send informations
+// Events Front - End
+
+// Send info to Back-End
 socket.emit(
   "sendMessage",
   {
