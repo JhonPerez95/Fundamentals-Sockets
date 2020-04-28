@@ -1,5 +1,6 @@
 const { io } = require("../server");
 
+// Listening Front-End
 io.on("connection", (client) => {
   console.log("User is connected");
 
@@ -12,18 +13,9 @@ io.on("connection", (client) => {
     console.log(data);
 
     client.broadcast.emit("sendMessage", { data });
-    // if (message.user) {
-    //   callback({
-    //     res: "All Good",
-    //   });
-    // } else {
-    //   callback({
-    //     res: "All Wrong",
-    //   });
-    // }
   });
 
-  // Send informations
+  // Send info Front-End
   client.emit("sendMessage", {
     user: "Admin",
     message: "Welcome to API",
